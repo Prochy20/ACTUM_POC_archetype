@@ -10,6 +10,13 @@ const logger = winston.createLogger({
     format: winston.format.json(),
 });
 
+// Method used with Morgan to write logs with predefined streams
+logger.stream = {
+    write(message) {
+        logger.info(message);
+    },
+};
+
 if (config.ENV.NODE_ENV !== 'development') {
     // Write all logs with importance level of `error` or less to `error.log`
     logger.add(new winston.transports.DailyRotateFile({
@@ -33,13 +40,6 @@ if (config.ENV.NODE_ENV !== 'development') {
         maxFiles: config.LOGS.KEEP_INTERVAL,
     }));
 }
-
-// Method used with Morgan to write logs with predefined streams
-logger.stream = {
-    write(message) {
-        logger.info(message);
-    },
-};
 
 // If we're not in production then log to the `console` with the format:
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
