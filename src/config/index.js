@@ -12,17 +12,32 @@ module.exports = {
          * @property {Number} PORT Port which should API listen on
          */
         PORT: Number(process.env.API_PORT) || 8055,
+
+        /**
+         * @property {Number} TOKEN Static authorization token for API
+         */
+        TOKEN: process.env.API_TOKEN,
+
+        /**
+         * @property {Number} RATE_LIMIT_WINDOW How long is a rate limit window (in ms)
+         */
+        RATE_LIMIT_WINDOW: process.env.RATE_LIMIT_WINDOW,
+
+        /**
+         * @property {Number} RATE_LIMIT_MAX Max ammount of req. per window
+         */
+        RATE_LIMIT_MAX: process.env.RATE_LIMIT_MAX,
     },
 
     LOGS: {
 
         /**
-         * @property {String} LEVEL Level of logging
+         * @property {String} LOG_LEVEL Level of logging
          */
         LEVEL: process.env.LOG_LEVEL,
 
         /**
-         * @property {Number} PATH Path to directory for saving the logs (should be relative to src)
+         * @property {Number} LOG_PATH Path to directory for saving the logs (relative to src)
          */
         PATH: process.env.LOG_PATH,
 
