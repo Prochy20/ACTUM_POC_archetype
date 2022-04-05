@@ -34,6 +34,13 @@ if (config.ENV.NODE_ENV !== 'development') {
     }));
 }
 
+// Method used with Morgan to write logs with predefined streams
+logger.stream = {
+    write(message) {
+        logger.info(message);
+    },
+};
+
 // If we're not in production then log to the `console` with the format:
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
 if (config.ENV.NODE_ENV !== 'production') {
