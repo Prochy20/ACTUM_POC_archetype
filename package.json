@@ -2,9 +2,9 @@
   "name": "archetype",
   "version": "1.0.0",
   "description": "POC: Archetype of Microservice (ACTUM DIGITAL)",
-  "main": "index.js",
+  "main": "./src/service.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./src/service.js"
   },
   "keywords": [],
   "author": "Martin Procházka",
@@ -12,6 +12,7 @@
   "devDependencies": {
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4"
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
   }
 }
