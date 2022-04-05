@@ -25,6 +25,11 @@ module.exports = {
          * @property {Number} PATH Path to directory for saving the logs (should be relative to src)
          */
         PATH: process.env.LOG_PATH,
+
+        /**
+         * @property {String} How long to keep logs
+         */
+        KEEP_INTERVAL: process.env.LOG_KEEP_INTERVAL,
     },
 
     /**

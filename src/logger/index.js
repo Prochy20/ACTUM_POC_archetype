@@ -1,26 +1,36 @@
 const winston = require('winston');
+require('winston-daily-rotate-file');
+
 const path = require('path');
 
 const config = require('../config');
 
-const timestamp = new Date();
-
 const logger = winston.createLogger({
     level: config.LOGS.LEVEL,
     format: winston.format.json(),
-    defaultMeta: { module: 'main' },
 });
 
 if (config.ENV.NODE_ENV !== 'development') {
     // Write all logs with importance level of `error` or less to `error.log`
-    logger.add(new winston.transports.File({
-        filename: path.join(config.LOGS.PATH, 'error', `${timestamp}_error.log`),
+    logger.add(new winston.transports.DailyRotateFile({
+        filename: '%DATE%-error',
+        dirname: path.join(config.LOGS.PATH, 'error'),
+        datePattern: 'DD-MM-YYYY-HH-mm-ss',
+        maxSize: '20m',
         level: 'error',
+        extension: '.log',
+        maxFiles: config.LOGS.KEEP_INTERVAL,
     }));
 
     // Write all logs with importance level of `info` or less to `combined.log`
-    logger.add(new winston.transports.File({
-        filename: path.join(config.LOGS.PATH, 'combined', `${timestamp}_combined.log`),
+    logger.add(new winston.transports.DailyRotateFile({
+        filename: '%DATE%-combined',
+        dirname: path.join(config.LOGS.PATH, 'combined'),
+        datePattern: 'DD-MM-YYYY-HH-mm-ss',
+        maxSize: '20m',
+        level: 'info',
+        extension: '.log',
+        maxFiles: config.LOGS.KEEP_INTERVAL,
     }));
 }
 
