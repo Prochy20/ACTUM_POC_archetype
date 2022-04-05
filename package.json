@@ -4,7 +4,8 @@
   "description": "POC: Archetype of Microservice (ACTUM DIGITAL)",
   "main": "./src/service.js",
   "scripts": {
-    "dev": "nodemon ./src/service.js"
+    "dev": "nodemon ./src/service.js",
+    "start": "node ./src/service.js"
   },
   "keywords": [],
   "author": "Martin Procházka",
