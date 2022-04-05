@@ -8,15 +8,25 @@ const logger = require('./logger');
 const api = require('./api');
 const notFoundHanlder = require('./middlewares/notFoundHandler');
 const errorHandler = require('./middlewares/errorHandler');
+const rateLimiter = require('./middlewares/rateLimiter');
+const authorization = require('./middlewares/authorization');
 
 const app = express();
 
+// Middlewares
 app.use(helmet());
 app.use(cors());
 app.use(morgan('combined', { stream: logger.stream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(rateLimiter);
+
+app.use(authorization);
+
+// Routes
 app.use('/api', api);
+
+// Error handling
 app.use(notFoundHanlder);
 app.use(errorHandler);
 
