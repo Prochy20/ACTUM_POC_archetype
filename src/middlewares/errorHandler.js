@@ -10,7 +10,8 @@ module.exports = (error, req, res, next) => {
 
     logger.error(error.message, error);
 
-    const stack = config.ENV.NODE_ENV === 'production'
+    // Do not display error stack in production
+    const stack = config.ENV.NODE_ENV !== 'development'
         ? ''
         : error.stack || '';
 
