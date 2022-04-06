@@ -56,7 +56,7 @@ The main purpose of this repository is to show a project setup and workflow for 
 
 ### Styleguide
 
-This project follows Airbnb JavaScript Style Guide ( see https://github.com/airbnb/javascript )
+This project follows Airbnb JavaScript Style Guide ( see <https://github.com/airbnb/javascript> )
 
 ### Project Structure
 
@@ -71,7 +71,7 @@ The folder structure of this app is explained below:
 | **src/api/v1/** | Contains v1 of available API routes |
 | **src/config** | Contains application config (built on top of .env) |
 | **src/errors** | Contains all available errors (reused in express middlewares) |
-| **src/logger**              | Common logging instance to be used across your app. |
+| **src/logger**              | Common logging instance to be used across whole app. |
 | **src/middlewares**      | Express middlewares which process the incoming requests before handling them down to the routes |
 | src/service.js      | Main application entry point |
 
