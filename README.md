@@ -2,7 +2,7 @@
 
 This project is meant to proof the concept of microservices architecture using an archetype as a basis for each particular microservice.
 
-# Environment vars
+## Environment vars
 
 This project uses the following environment variables:
 
