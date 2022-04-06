@@ -17,11 +17,11 @@ This project uses the following environment variables:
 | LOG_KEEP_INTERVAL | Defines how log are logs kept untill they are overwritten (possible values: xh -> x Hours / ym -> y Minutes )
 | NODE_ENV | Defines node envirionment :: Possible values: production/development|
 
-# Pre-requisites
+## Pre-requisites
 
 - Install [Node.js](https://nodejs.org/en/) version 14.18.0 or higher
 
-# Getting started
+## Getting started
 
 - Clone the repository
 
@@ -50,15 +50,15 @@ yarn dev
 
 Navigate to `http://localhost:8055` (port is set in Environment vars)
 
-# Node + Express
+## Node + Express
 
 The main purpose of this repository is to show a project setup and workflow for writing microservice.
 
-## Styleguide
+### Styleguide
 
 This project follows Airbnb JavaScript Style Guide ( see https://github.com/airbnb/javascript )
 
-## Project Structure
+### Project Structure
 
 The folder structure of this app is explained below:
 
@@ -75,7 +75,7 @@ The folder structure of this app is explained below:
 | **src/middlewares**      | Express middlewares which process the incoming requests before handling them down to the routes |
 | src/service.js      | Main application entry point |
 
-## NPM Dependencies
+### NPM Dependencies
 
 Following npm packages are used in project:
 
