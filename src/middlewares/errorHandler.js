@@ -1,6 +1,20 @@
 const config = require('../config');
 const logger = require('../logger');
 
+/**
+ * @typedef { import('express').Request } Request
+ * @typedef { import('express').Response } Response
+ * @typedef { import('express').NextFunction } Next
+ */
+
+/**
+ * MW: Handles errors. Sends appropriate result to user + logs error
+ * @param {Request} req request
+ * @param {Response} res response
+ * @param {Next} next next function
+ * @param {Error} error error to be displayed
+ */
+
 // eslint-disable-next-line no-unused-vars
 module.exports = (error, req, res, next) => {
     const {
