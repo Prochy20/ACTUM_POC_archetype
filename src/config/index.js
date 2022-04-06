@@ -29,6 +29,9 @@ module.exports = {
         RATE_LIMIT_MAX: process.env.RATE_LIMIT_MAX,
     },
 
+    /**
+     * @property {Object} LOGS Logging settings
+     */
     LOGS: {
 
         /**
