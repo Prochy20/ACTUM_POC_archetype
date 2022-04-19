@@ -15,6 +15,11 @@ const authorization = require('./middlewares/authorization');
 
 const app = express();
 
+process.on('uncaughtException', (error) => {
+    logger.error(error);
+    process.exit(1);
+});
+
 // Middlewares
 app.use(helmet());
 app.use(cors());
